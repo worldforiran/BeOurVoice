@@ -6,7 +6,9 @@ interface IProps {};
 function App({}: IProps) {
   return (
     <div>
-      <h1 className={styles.Title}>Let's End This Together,<br />#BeOurVoice for #MahsaAmini!</h1>
+      <h1 className={styles.Title}>
+        Let's End This Together,
+        <br />#BeOurVoice for <a href="https://twitter.com/hashtag/MahsaAmini">#MahsaAmini</a>!</h1>
     </div>
   );
 }

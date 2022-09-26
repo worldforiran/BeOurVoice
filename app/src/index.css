@@ -17,3 +17,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Volkhov', serif;
   font-weight: 700;
 }
+
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+  font-family: 'Volkhov', serif;
+}
+
+a, a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 49, 49);
+}
