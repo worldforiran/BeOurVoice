@@ -1,11 +1,6 @@
-const persian = [
-  "مهسا_امینی",
-  "اعتصابات_سراسری",
-  "اعتراضات_سراسری",
-  "مرگ_بر_جمهوری_اسلامی",
-];
+const persian = ["انقلاب_۱۴۰۱", "مهسا_امینی", "اعتصابات_سراسری"];
 
-const english = ["MahsaAmini", "IranProtests", "IranProtests2022"];
+const english = ["IranRevolution", "IranRevolution2022", "MahsaAmini"];
 
 export default {
   persian,
