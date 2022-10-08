@@ -1,14 +1,22 @@
-import React from 'react';
 import styles from './App.module.css';
+import Hashtags from './Hashtags';
+import LanguageSelector from './LanguageSelector';
+import usePersistedState from './usePersistedState';
 
-interface IProps {};
+interface IProps { };
 
-function App({}: IProps) {
+export enum ELanguages {
+  English = 'english',
+  Persian = 'persian',
+}
+
+function App({ }: IProps) {
+  const [language, setLanguage] = usePersistedState('bov-language', ELanguages.English);
+
   return (
     <div>
-      <h1 className={styles.Title}>
-        Let's End This Together,
-        <br />#BeOurVoice for <a href="https://twitter.com/hashtag/MahsaAmini">#MahsaAmini</a>!</h1>
+      <LanguageSelector language={language} setLanguage={setLanguage} />
+      <Hashtags language={language} />
     </div>
   );
 }

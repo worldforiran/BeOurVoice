@@ -1,0 +1,9 @@
+.LanguageSelector {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  padding: 0.5rem 0;
+  text-align: center;
+}
