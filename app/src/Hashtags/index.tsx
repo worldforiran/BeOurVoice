@@ -4,6 +4,7 @@ import styles from './Hashtags.module.css';
 import list from './hashtagList';
 import { useCallback, useState } from 'react';
 import { ELanguages } from '../App';
+import useLocale from '../hooks/useLocale';
 
 interface IProps {
   language: ELanguages;
@@ -12,6 +13,7 @@ interface IProps {
 const randomize = () => Math.random() > 0.5 ? 1 : -1;
 
 function Hashtags({ language }: IProps) {
+  const { _ } = useLocale()
   const [copied, setCopied] = useState(false);
 
   const hashtags = list[language].sort(randomize);
@@ -22,15 +24,6 @@ function Hashtags({ language }: IProps) {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }, [hashtags]);
-
-  const buttonText = (() => {
-    if (language === ELanguages.English) {
-      if (copied) return 'Copied!';
-      return 'Copy';
-    }
-    if (copied) return 'کپی شد!';
-    return 'کپی';
-  })()
 
   return (
     <div className={cx(styles.Hashtags, {
@@ -46,7 +39,7 @@ function Hashtags({ language }: IProps) {
       <div className={cx(styles.CopyButton, {
         [styles.CopyButtonCopied]: copied
       })} onClick={copy}>
-        {buttonText}
+        {copied ? _('COPIED') : _('COPY')}
       </div>
     </div>
   );

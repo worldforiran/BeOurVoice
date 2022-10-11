@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import styles from './LanguageSelector.module.css';
 import { ELanguages } from '../App';
+import useLocale from '../hooks/useLocale';
 
 interface IProps {
   language: ELanguages;
@@ -9,7 +10,7 @@ interface IProps {
 };
 
 function LanguageSelector({ language, setLanguage }: IProps) {
-  const text = language === ELanguages.English ? 'نمایش هشتگ‌های فارسی' : 'Show English Hashtags';
+  const { _ } = useLocale()
 
   const switchLanguage = () => {
     setLanguage(language === ELanguages.English ? ELanguages.Persian : ELanguages.English);
@@ -17,7 +18,7 @@ function LanguageSelector({ language, setLanguage }: IProps) {
 
   return (
     <div className={styles.LanguageSelector} onClick={switchLanguage}>
-      { text }
+      { _('SHOW_OTHER_LANGUAGE') }
     </div>
   );
 }

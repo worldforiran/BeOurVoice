@@ -1,3 +1,4 @@
+import { createContext } from 'react';
 import styles from './App.module.css';
 import Hashtags from './Hashtags';
 import LanguageSelector from './LanguageSelector';
@@ -10,14 +11,18 @@ export enum ELanguages {
   Persian = 'persian',
 }
 
+export const LocaleContext = createContext({
+  language: ELanguages.English
+})
+
 function App({ }: IProps) {
   const [language, setLanguage] = usePersistedState('bov-language', ELanguages.English);
 
   return (
-    <div>
+    <LocaleContext.Provider value={{ language }}>
       <LanguageSelector language={language} setLanguage={setLanguage} />
       <Hashtags language={language} />
-    </div>
+    </LocaleContext.Provider>
   );
 }
 
