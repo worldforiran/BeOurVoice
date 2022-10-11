@@ -9,17 +9,19 @@ interface IProps {
   language: ELanguages;
 };
 
+const randomize = () => Math.random() > 0.5 ? 1 : -1;
+
 function Hashtags({ language }: IProps) {
   const [copied, setCopied] = useState(false);
 
-  const hashtags = list[language];
+  const hashtags = list[language].sort(randomize);
 
   const copy = useCallback(() => {
-    const text = '\n\n' + hashtags.map(hashtag => '#' + hashtag).join('\n');
+    const text = hashtags.map(hashtag => '#' + hashtag).join('\n');
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  }, []);
+  }, [hashtags]);
 
   const buttonText = (() => {
     if (language === ELanguages.English) {
