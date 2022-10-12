@@ -1,8 +1,6 @@
-import React from 'react';
-import cx from 'classnames';
 import styles from './LanguageSelector.module.css';
-import { ELanguages } from '../App';
-import useLocale from '../hooks/useLocale';
+import { ELanguages } from '@/App';
+import useLocale from '@/hooks/useLocale';
 
 interface IProps {
   language: ELanguages;

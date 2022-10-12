@@ -1,8 +1,8 @@
 import { createContext } from 'react';
-import Hashtags from './Hashtags';
-import LanguageSelector from './LanguageSelector';
-import usePersistedState from './usePersistedState';
-import Socials from './Socials';
+import usePersistedState from '@/hooks/usePersistedState';
+import Hashtags from '@/components/Hashtags';
+import LanguageSelector from '@/components/LanguageSelector';
+import Socials from '@/components/Socials';
 
 interface IProps { };
 

@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import styles from './Socials.module.css';
 
-import githubLogoSrc from '../assets/github.png';
+import githubLogoSrc from 'src/assets/github.png';
 
 function SocialButton({ title, url, logoSrc }: { title: string, url: string, logoSrc: string }) {
   return (

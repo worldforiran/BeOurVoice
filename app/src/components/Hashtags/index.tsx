@@ -3,8 +3,8 @@ import styles from './Hashtags.module.css';
 
 import list from './hashtagList';
 import { useCallback, useState } from 'react';
-import { ELanguages } from '../App';
-import useLocale from '../hooks/useLocale';
+import { ELanguages } from '@/App';
+import useLocale from '@/hooks/useLocale';
 
 interface IProps {
   language: ELanguages;
