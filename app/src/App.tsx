@@ -1,8 +1,8 @@
 import { createContext } from 'react';
-import styles from './App.module.css';
 import Hashtags from './Hashtags';
 import LanguageSelector from './LanguageSelector';
 import usePersistedState from './usePersistedState';
+import Socials from './Socials';
 
 interface IProps { };
 
@@ -22,6 +22,7 @@ function App({ }: IProps) {
     <LocaleContext.Provider value={{ language }}>
       <LanguageSelector language={language} setLanguage={setLanguage} />
       <Hashtags language={language} />
+      <Socials />
     </LocaleContext.Provider>
   );
 }
